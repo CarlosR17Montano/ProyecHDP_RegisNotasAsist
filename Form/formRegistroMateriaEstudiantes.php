@@ -15,7 +15,7 @@ require("../Conex.php");
         <link rel="stylesheet" type="text/css" href="../Js/CSS/formulario.css" media="screen, tv, projection, print" />
         <link href="../Js/CSS/estilos.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
-        <title></title>
+        <title>Registro de materia</title>
     </head>
     <body>
          <h2>FORMULARIO DE REGISTRO DE MATERIA PARA ESTUDIANTES</h2>
