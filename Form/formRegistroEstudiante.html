@@ -11,7 +11,7 @@ and open the template in the editor.
         <script type="text/javascript" src="../Js/vanadium.js"></script>
          <link rel="stylesheet" type="text/css" href="../Js/CSS/style.css" media="screen, tv, projection, print" />
         <link rel="stylesheet" type="text/css" href="../Js/CSS/formulario.css" media="screen, tv, projection, print" />
-
+          <link href="../Js/CSS/estilos.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -19,7 +19,8 @@ and open the template in the editor.
 
         <h2>FORMULARIO DE INGRESO DE ESTUDIANTE</h2>
 
-   
+
+      <div class="contenedorDeFormulario">
         <form name="formEstudianteAgregar" action="../Procesos/ProcesoRegistroEstudiante.php" method="POST">
      <fieldset>
                 <legend>Datos del Estudiante</legend>
@@ -54,6 +55,7 @@ and open the template in the editor.
                 </fieldset>
                 <input type="submit" value="Enviar">
             </form>
+      </div>
 
 
     </body>
