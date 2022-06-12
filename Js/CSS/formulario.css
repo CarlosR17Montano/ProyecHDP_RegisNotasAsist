@@ -1,0 +1,57 @@
+
+form
+{
+   padding:2px;
+   cursor:pointer;
+   display:block;
+   width:290px;
+   margin: 0 auto;
+   text-align:left;
+}
+legend
+{
+   font-family: "Arial", Geneva,  Helvetica, sans-serif;
+   font-weight: bold;
+    font-size: 12px;
+}
+label
+{
+   display: block;
+   padding:1px;
+   margin:1px;
+   cursor:pointer;
+}
+
+input,select{
+   margin:1px; 
+   font-family: "Arial", Geneva,Helvetica, sans-serif;
+   font-size: 12px;
+   display: block;
+}
+.noblck
+{
+   display: inline;
+}
+
+fieldset{
+   float: top;
+   width: 95%;
+   display: table;
+}
+textarea
+{
+   width:100%;
+}
+h2{
+	font-size: 35px; color: #000000; text-transform: uppercase;
+	text-align: center; margin: 0 0 35px 0; text-shadow: 0px 1px 0px #C0C0C0;
+}
+.People{
+    font-family: "Arial", Geneva,Helvetica, sans-serif;
+   font-size: 12px;
+}
+input[type="radio"] {
+    margin-left:10px;
+}
+.clearBoth {
+    clear:both;
