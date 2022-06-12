@@ -26,11 +26,11 @@ and open the template in the editor.
               <fieldset>
                   <legend>Datos del Docente</legend>
                   <label for="NomDocen">Nombres del Docente:</label>
-                  <input type="text" class=":required :alpha" id="NomDocen" name="NomDocen" value="" required><br>
+                  <input type="text" class=":required :alpha" id="NomDocen" name="NomDocen" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                   <label for="PriApeDocen">Primer Apellido del Docente:</label>
-                  <input type="text" class=":required :alpha" id="ApeDocen" name="PriApeDocen" value="" required><br>
+                  <input type="text" class=":required :alpha" id="ApeDocen" name="PriApeDocen" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                   <label for="SegApeDocen">Segundo Apellido del Docente:</label>
-                  <input type="text" class=":required :alpha" id="ApeDocen" name="SegApeDocen" value="" required><br>
+                  <input type="text" class=":required :alpha" id="ApeDocen" name="SegApeDocen" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                   <label for="DUIDocen">DUI Docente:</label>
                   <input type="text" class=":required :number :length;9" id="DUIDocen" name="DUIDocen" value="" required><br>
                   <label for="PassDocen">Password Docente:</label>

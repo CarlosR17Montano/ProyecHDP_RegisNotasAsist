@@ -25,11 +25,11 @@ and open the template in the editor.
      <fieldset>
                 <legend>Datos del Estudiante</legend>
                 <label for="NomEstu">Nombres del Estudiante:</label>
-                <input type="text" class=":required :alpha" id="NomEstu" name="NomEstu" value="" required><br>
+                <input type="text" class=":required :alpha" id="NomEstu" name="NomEstu" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                 <label for="PriApeEstu">Primer Apellido del Estudiante:</label>
-                <input type="text" class=":required :alpha" id="ApeEstu" name="PriApeEstu" value="" required><br>
+                <input type="text" class=":required :alpha" id="ApeEstu" name="PriApeEstu" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                 <label for="SegApeEstu">Segundo Apellido del Estudiante:</label>
-                <input type="text" class=":required :alpha" id="ApeEstu" name="SegApeEstu" value="" required><br>
+                <input type="text" class=":required :alpha" id="ApeEstu" name="SegApeEstu" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
                 <label for="DUIEstu">DUI Estudiante:</label>
                 <input type="text" class=":required :number :length;9" id="DUIEstu" name="DUIEstu" value="" required><br>
                 <label for="PassEstu">Password Estudiante:</label>
@@ -45,9 +45,9 @@ and open the template in the editor.
                     <legend>Seleccion de Genero:</legend>
                     <div>
                         <select id="GeneroEstu" class=":required" name="SexoEstu">
-                            <option value="">Seleccionar</option>
-                            <option value="M">Masculino</option>
-                            <option value="F">Femenino</option>
+                            <option class="opcion" value="">Seleccionar</option>
+                            <option class="opcion" value="M">Masculino</option>
+                            <option class="opcion" value="F">Femenino</option>
 
                         </select>
                     </div>

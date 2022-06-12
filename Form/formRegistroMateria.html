@@ -1,4 +1,4 @@
-    
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,6 +12,7 @@ and open the template in the editor.
         <script type="text/javascript" src="../Js/vanadium.js"></script>
          <link rel="stylesheet" type="text/css" href="../Js/CSS/style.css" media="screen, tv, projection, print" />
         <link rel="stylesheet" type="text/css" href="../Js/CSS/formulario.css" media="screen, tv, projection, print" />
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -23,7 +24,7 @@ and open the template in the editor.
             <fieldset>
                 <legend>Datos de Materia</legend>
                 <label for="NomMat">Nombre de la Materia:</label><br>
-                <input type="text" class=":required" id="NomMat" name="NomMat" value="" required><br>
+                <input type="text" class=":required" id="NomMat" name="NomMat" value="" onkeyup="aMays(event, this)" onblur="aMays(event, this)" required><br>
             </fieldset>
             <input type="submit" value="Enviar">
         </form>

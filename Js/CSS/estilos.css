@@ -165,3 +165,7 @@ a:hover{
 .opcion:hover{
     color:gold;
 }
+
+div{
+  text-align: center;
+}
