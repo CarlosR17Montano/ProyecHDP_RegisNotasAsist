@@ -4,9 +4,16 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php
-require("../Conex.php");
-?>
+  <?php
+        require("../Conex.php");
+        
+        
+        session_start();
+        if ($_SESSION["TipUser"] == 1) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+      
+        ?>
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -118,12 +125,7 @@ require("../Conex.php");
     </head>
     <body>
         <h2>FORMULARIO DE INGRESO DE NOTAS A ESTUDIANTE</h2>
-        <?php
-        session_start();
-        if ($_SESSION["TipUser"] == 1) {
-            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
-            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
-            ?>
+
             <form name="formDocenteAgregar" action="../Procesos/ProcesoRegistroNotas.php" method="POST">
                 <fieldset>
                     <legend>Formulario de Ingreso de Notas</legend>

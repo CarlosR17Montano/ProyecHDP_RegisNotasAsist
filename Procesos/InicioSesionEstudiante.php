@@ -27,14 +27,14 @@ and open the template in the editor.
                 echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
                 echo "Bienvenido " . $DatosEstu['NombresEstudiante'] . " " . $DatosEstu['ApellidosEstudiente'] . " " . $DatosEstu['CodigoEstudiante'] . "<br>";
                 if ($TipoUser == 2) {
+                    header('Location:http://localhost/ProyecHDP_RegisNotasAsist/Procesos/MenuEstudiante.php');
                     $_SESSION["CodigoEstu"] = $DatosEstu['CodigoEstudiante'];
                     $_SESSION["NombreEstu"] = $DatosEstu['NombresEstudiante'];
                     $_SESSION["ApellidosEstu"] = $DatosEstu['ApellidosEstudiente'];
                     $_SESSION["TipUser"] = $TipoUser;
-                    ?>
-                    <a href="../Procesos/MostrarNotasEstudiante.php">Ver Notas</a><br>
+                    
 
-                    <?php
+                 
                 }
             }
         } else {

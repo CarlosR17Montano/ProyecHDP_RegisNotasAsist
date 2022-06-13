@@ -19,13 +19,7 @@ and open the template in the editor.
     <body>
 
         <h2>FORMULARIO DE INGRESO DE DOCENTE</h2>
-        <?php
-        session_start();
-        if ($_SESSION["TipUser"] == 1) {
-            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
-            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
-            ?>
-
+    
             <form name="formDocenteAgregar" action="../Procesos/ProcesoRegistroDocente.php" method="POST">
                 <fieldset>
                     <legend>Datos del Docente</legend>
@@ -62,9 +56,7 @@ and open the template in the editor.
             </form>
 
             <?php
-        } else {
-            echo "<p>No tienes permisos de gestion</>";
-        }
+        
         ?>      
     </body>
 </html>

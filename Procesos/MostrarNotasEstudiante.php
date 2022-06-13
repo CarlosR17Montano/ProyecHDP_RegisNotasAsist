@@ -22,7 +22,7 @@ require("../Conex.php");
         if ($_SESSION["TipUser"] == 2) {
             echo "<p class='usuario'>Bienvenid@ " . $_SESSION["CodigoEstu"] . " " . $_SESSION["NombreEstu"] . " " . $_SESSION["ApellidosEstu"];
             echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
-            $CodigoNotaEstudiante = $_SESSION["CodigoEstudiante"];
+            $CodigoNotaEstudiante = $_SESSION["CodigoEstu"];
             ?>
         <table border="2px"> 
             <tbody>

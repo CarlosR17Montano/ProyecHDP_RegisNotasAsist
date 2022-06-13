@@ -79,11 +79,11 @@ and open the template in the editor.
             if ($con->query($sqlInsertEstudiante) === TRUE) {
                 echo "Verificar datos de " . $CodigoEstudiante . "<br>";
                 ?> 
-                <!--            <script>
+               <script>
                                 setTimeout(function () {
-                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formInicioSesionEstudiante.php";
                                 }, 4000);
-                            </script>-->
+                            </script>
                 <?php
             } else {
                 echo "Error: " . $sqlInsertEstudiante . "<br>" . $con->error;
@@ -110,7 +110,7 @@ and open the template in the editor.
             ?> 
                            <script>
                                 setTimeout(function () {
-                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formInicioSesionEstudiante.php";
                                 }, 2000);
                             </script>
                 <?php

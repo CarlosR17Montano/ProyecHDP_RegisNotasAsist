@@ -31,10 +31,7 @@ and open the template in the editor.
 
         <?php
         session_start();
-        if ($_SESSION["TipUser"] == 1) {
-            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
-            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
-            
+                   
         require("../Conex.php");
         setlocale(LC_TIME, "es_ES");
         //Consulta para obtener el ultimo Id de campo IdDocente
@@ -85,11 +82,11 @@ and open the template in the editor.
             if ($con->query($sqlInsertDocente) === TRUE) {
                 echo "Verificar datos de " . $CodigoDocente . "<br>";
                 ?> 
-                <!--            <script>
+                    <script>
                                 setTimeout(function () {
-                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formInicioSesionDocente.php";
                                 }, 4000);
-                            </script>-->
+                            </script>
                 <?php
             } else {
                 echo "Error: " . $sqlInsertDocente . "<br>" . $con->error;
@@ -114,17 +111,15 @@ and open the template in the editor.
         } else {
             echo "YA ESTA REGISTRADO ";
             ?> 
-<!--                           <script>
+                    <script>
                                 setTimeout(function () {
-                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formInicioSesionDocente.php";
                                 }, 2000);
-                            </script>-->
+                            </script>
                 <?php
             
         }
-        } else {
-            echo "<p class='noAutorizado'>No tienes permisos de gestion</>";
-        }
+        
         mysqli_close($con);
         ?>
 

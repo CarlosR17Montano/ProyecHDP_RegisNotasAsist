@@ -27,15 +27,12 @@ and open the template in the editor.
                 echo "Bienvenido " . $DatosDocen['NombresDocente'] . " " . $DatosDocen['ApellidosDocente'] . " " . $DatosDocen['CodigoDocente'] . "<br>";
                      echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
                 if ($TipoUser == 1) {
-                    $_SESSION["Codigo"] = $DatosDocen['CodigoDocente'];
-                    $_SESSION["NombreDocen"] = $DatosDocen['NombresDocente'];
-                    $_SESSION["ApellidosDocen"] = $DatosDocen['ApellidosDocente'];
-                    $_SESSION["TipUser"] = $TipoUser;
-                    ?>
-                    <a href="../Form/formRegistroDocente.php">Registro de Maestro</a><br>
-                    <a href="../Form/formRegistroMateria.php">Registro Materia</a><br>
-                    <a href="../Form/formRegistroMateriaEstudiantes.php">Registro de Materias a Estudiante</a><br>
-                    <?php
+                    header('Location:http://localhost/ProyecHDP_RegisNotasAsist/Procesos/MenuDocente.php');
+                    $_SESSION['Codigo'] = $DatosDocen['CodigoDocente'];
+                    $_SESSION['NombreDocen'] = $DatosDocen['NombresDocente'];
+                    $_SESSION['ApellidosDocen'] = $DatosDocen['ApellidosDocente'];
+                    $_SESSION['TipUser'] = $TipoUser;
+                    
                 }
             }
         } else {

@@ -53,11 +53,11 @@ and open the template in the editor.
                 if ($con->query($sqlInsertMateria) === TRUE) {
                     echo "Verificar datos de " . $CodMatAnio . "<br>";
                     ?> 
-                                        <!--            <script>
+                                               <script>
                                                         setTimeout(function () {
-                                                            window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                                            window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Procesos/InicioSesionDocente.php";
                                                         }, 4000);
-                                                    </script>-->
+                                                    </script>
                     <?php
                 } else {
                     echo "Error: " . $sqlInsertMateria . "<br>" . $con->error;
@@ -77,14 +77,14 @@ and open the template in the editor.
             }
             //Codigo de validacion para no ingresar otro registro
             ?> 
-    <!--                           <script>
+            <script>
                                 setTimeout(function () {
-                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Form/formRegistroAlumno.html";
+                                    window.location.href = "http://localhost/ProyecHDP_RegisNotasAsist/Procesos/InicioSesionDocente.php";
                                 }, 2000);
-                            </script>-->
+                            </script>
             <?php
         } else {
-            echo "<p class='noAutorizado'>No tienes permisos de gestion</>";
+            echo "<p'>No tienes permisos de gestion</>";
         }
         mysqli_close($con);
         ?>

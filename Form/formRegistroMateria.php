@@ -17,7 +17,8 @@ and open the template in the editor.
     </head>
     <body>
 
-        <h2>FORMULARIO DE INGRESO DE MATERIA</h2><?php
+        <h2>FORMULARIO DE INGRESO DE MATERIA</h2>
+            <?php
         session_start();
         if ($_SESSION["TipUser"] == 1) {
             echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];

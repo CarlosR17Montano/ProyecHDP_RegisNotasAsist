@@ -26,5 +26,6 @@ and open the template in the editor.
       </fieldset>
       <button>Ingreso</button>
       </form>
+        <a href="formRegistroEstudiante.php">Registro de Estudiante</a><br>
     </body>
 </html>
