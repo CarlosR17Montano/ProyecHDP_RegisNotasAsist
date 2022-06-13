@@ -17,6 +17,12 @@ require("../Conex.php");
         <title></title>
     </head>
     <body>
+        <?php
+        session_start();
+        if ($_SESSION["TipUser"] == 1) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+            ?>
          <h2>FORMULARIO DE REGISTRO DE MATERIA PARA ESTUDIANTES</h2>
          <form name="formDocenteAgregar" action="../Procesos/ProcesoRegistrarMateriaEstudiante.php" method="POST">
             <fieldset>
@@ -45,5 +51,10 @@ require("../Conex.php");
             </fieldset>
             <input type="submit" value="Enviar">
         </form>
+         <?php
+        } else {
+            echo "<p>No tienes permisos de gestion</>";
+        }
+        ?>     
     </body>
 </html>

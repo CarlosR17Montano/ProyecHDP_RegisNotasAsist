@@ -17,7 +17,13 @@ require("../Conex.php");
     
     </head>
     <body>
-        Bienvenido
+         <?php
+        session_start();
+        if ($_SESSION["TipUser"] == 2) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["CodigoEstu"] . " " . $_SESSION["NombreEstu"] . " " . $_SESSION["ApellidosEstu"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+            $CodigoNotaEstudiante = $_SESSION["CodigoEstudiante"];
+            ?>
         <table border="2px"> 
             <tbody>
                 <tr>
@@ -117,7 +123,7 @@ require("../Conex.php");
            ON (notasmaterias.CodEstudiante = estudiante.CodigoEstudiante))
        INNER JOIN notas_asistencias_bd.materia materia
           ON (notasmaterias.CodMateria = materia.CodMateriaAnio)
- WHERE estudiante.CodigoEstudiante = '2022MA2'";
+ WHERE estudiante.CodigoEstudiante = '$CodigoNotaEstudiante'";
                     $Regis1 = mysqli_query($con, $sql);
                     if (mysqli_num_rows($Regis1) > 0) {
                         // output data of each row
@@ -187,6 +193,9 @@ require("../Conex.php");
             </table>
             <?php
             echo "0 results";
+        }
+         } else {
+            echo "<p>No tienes permisos de gestion</>";
         }
         mysqli_close($con);
         ?>

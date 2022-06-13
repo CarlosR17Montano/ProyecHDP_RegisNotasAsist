@@ -74,6 +74,12 @@ require("../Conex.php");
     </head>
     <body>
         <h2>FORMULARIO DE ASISTENCIA DE ESTUDIANTE</h2>
+        <?php
+        session_start();
+        if ($_SESSION["TipUser"] == 1) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+            ?>
         <form name="formDocenteAgregar" action="../Procesos/ProcesoAsistenciaEstudiante.php" method="POST">
             <fieldset>
                 <legend>Formulario de Ingreso de Notas</legend>
@@ -187,5 +193,10 @@ require("../Conex.php");
             </fieldset>
             <input type="submit" value="Enviar">
         </form>
+         <?php
+        } else {
+            echo "<p>No tienes permisos de gestion</>";
+        }
+        ?>      
     </body>
 </html>

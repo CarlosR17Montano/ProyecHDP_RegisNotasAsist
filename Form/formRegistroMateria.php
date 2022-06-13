@@ -17,7 +17,12 @@ and open the template in the editor.
     </head>
     <body>
 
-        <h2>FORMULARIO DE INGRESO DE MATERIA</h2>
+        <h2>FORMULARIO DE INGRESO DE MATERIA</h2><?php
+        session_start();
+        if ($_SESSION["TipUser"] == 1) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+            ?>
 
         <form name="formMateriaAgregar" action="../Procesos/ProcesoRegistroMateria.php" method="POST">
             <fieldset>
@@ -27,7 +32,11 @@ and open the template in the editor.
             </fieldset>
             <input type="submit" value="Enviar">
         </form>
-
+<?php
+        } else {
+            echo "<p>No tienes permisos de gestion</>";
+        }
+        ?>     
 
     </body>
 </html>

@@ -30,6 +30,11 @@ and open the template in the editor.
 
 
         <?php
+        session_start();
+        if ($_SESSION["TipUser"] == 1) {
+            echo "<p class='usuario'>Bienvenid@ " . $_SESSION["Codigo"] . " " . $_SESSION["NombreDocen"] . " " . $_SESSION["ApellidosDocen"];
+            echo" <a href='cerrar_sesion.php'>Cerrar Sesion</a></p>";
+            
         require("../Conex.php");
         setlocale(LC_TIME, "es_ES");
         //Consulta para obtener el ultimo Id de campo IdDocente
@@ -64,6 +69,8 @@ and open the template in the editor.
         $anioRegisDocente = date("Y");
         //Creamos Codigo de Docente
         $CodigoDocente = $PriIniApe . $SegIniApe . $anioRegisDocente . $CorrelativoDocente."-1";
+        //Agregamos tipo de usuario para manejo de sesiones 1=docente
+        $TipoUsuario=1;
         //Sentecia y codigo para realizar una seleccion y evitar duplicidad en la BD
         $SqlSelecDuplicado = "SELECT *  FROM `docente` WHERE `DUIDocente` = '$DUIDocente' AND `EmailDocente` = '$EmailDocente'";
         $ObtenerDupli = mysqli_query($con, $SqlSelecDuplicado);
@@ -72,9 +79,9 @@ and open the template in the editor.
             //Sentencia y codigo para realizar el INSERT del estudiante
             $sqlInsertDocente = "INSERT INTO `docente` (`NombresDocente`, `ApellidosDocente`, `DUIDocente`, "
                     . "`PassDocente`, `EmailDocente`, `FechaIngreDocente`, "
-                    . "`Sexo`, `CodigoDocente`) "
+                    . "`Sexo`, `CodigoDocente`, `TipoUser`) "
                     . "VALUES ('$NomDocente', '$ApellidosCompleDocente', '$DUIDocente', "
-                    . "'$PassDocente', '$EmailDocente', '$FechaIngreDocente', '$GeneroDocente','$CodigoDocente')";
+                    . "'$PassDocente', '$EmailDocente', '$FechaIngreDocente', '$GeneroDocente','$CodigoDocente',$TipoUsuario)";
             if ($con->query($sqlInsertDocente) === TRUE) {
                 echo "Verificar datos de " . $CodigoDocente . "<br>";
                 ?> 
@@ -114,6 +121,9 @@ and open the template in the editor.
                             </script>-->
                 <?php
             
+        }
+        } else {
+            echo "<p class='noAutorizado'>No tienes permisos de gestion</>";
         }
         mysqli_close($con);
         ?>
