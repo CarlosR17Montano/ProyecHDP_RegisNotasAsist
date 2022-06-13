@@ -64,6 +64,7 @@ and open the template in the editor.
         $anioRegisEstudiante = date("Y");
         //Creamos Codigo de Estudiante
         $CodigoEstudiante = $anioRegisEstudiante . $PriIniApe . $SegIniApe . $CorrelativoEstudiante;
+        $TipoUsuario=2;
         //Sentecia y codigo para realizar una seleccion y evitar duplicidad en la BD
         $SqlSelecDuplicado = "SELECT *  FROM `estudiante` WHERE `DUIEstudiante` = '$DUIEstudiante' AND `EmailEstudiante` = '$EmailEstudiante'";;
         $ObtenerDupli = mysqli_query($con, $SqlSelecDuplicado);
@@ -72,9 +73,9 @@ and open the template in the editor.
             //Sentencia y codigo para realizar el INSERT del estudiante
             $sqlInsertEstudiante = "INSERT INTO `estudiante` (`NombresEstudiante`, `ApellidosEstudiente`, "
                     . "`DUIEstudiante`, `CodigoEstudiante`, `PassEstudiante`, `EmailEstudiante`, "
-                    . "`Telefono`, `FechaIngresoEstudiante`, `Sexo`) "
+                    . "`Telefono`, `FechaIngresoEstudiante`, `Sexo`, `TipoUser`) "
                     . "VALUES ('$NomEstudiante', '$ApellidosCompleEstudiante', '$DUIEstudiante', '$CodigoEstudiante', "
-                    . "'$PassEstudiante', '$EmailEstudiante', '$TeleMovEstudiante', '$FechaIngreEStudiante', '$GeneroEstudiante')";
+                    . "'$PassEstudiante', '$EmailEstudiante', '$TeleMovEstudiante', '$FechaIngreEStudiante', '$GeneroEstudiante',$TipoUsuario)";
             if ($con->query($sqlInsertEstudiante) === TRUE) {
                 echo "Verificar datos de " . $CodigoEstudiante . "<br>";
                 ?> 
