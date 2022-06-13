@@ -66,7 +66,7 @@ and open the template in the editor.
         $CodigoEstudiante = $anioRegisEstudiante . $PriIniApe . $SegIniApe . $CorrelativoEstudiante;
         $TipoUsuario=2;
         //Sentecia y codigo para realizar una seleccion y evitar duplicidad en la BD
-        $SqlSelecDuplicado = "SELECT *  FROM `estudiante` WHERE `DUIEstudiante` = '$DUIEstudiante' AND `EmailEstudiante` = '$EmailEstudiante'";;
+        $SqlSelecDuplicado = "SELECT *  FROM `estudiante` WHERE `DUIEstudiante` = '$DUIEstudiante' AND `EmailEstudiante` = '$EmailEstudiante'";
         $ObtenerDupli = mysqli_query($con, $SqlSelecDuplicado);
         $RegistroDupli = mysqli_num_rows($ObtenerDupli);
         if ($RegistroDupli == 0) {
